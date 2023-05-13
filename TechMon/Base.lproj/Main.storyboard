@@ -1,24 +1,311 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="misaki_gothic.ttf">
+            <string>MisakiGothic</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Lobby View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LobbyViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-av-8Jo">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobby.png" translatesAutoresizingMaskIntoConstraints="NO" id="HVj-QJ-tUJ">
+                                <rect key="frame" x="0.0" y="109" width="393" height="393"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HVj-QJ-tUJ" secondAttribute="height" multiplier="1:1" id="Maj-gw-MSx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yusya.png" translatesAutoresizingMaskIntoConstraints="NO" id="W1K-aN-MRX">
+                                <rect key="frame" x="50" y="159" width="293" height="293"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxa-Al-SHp">
+                                <rect key="frame" x="46.666666666666657" y="602" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="EnS-Qh-Opo"/>
+                                    <constraint firstAttribute="height" constant="100" id="k9P-oq-dCo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="冒険に行く">
+                                    <backgroundConfiguration key="background" image="gold_button.png"/>
+                                    <fontDescription key="titleFontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="28"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="scP-1v-bau" kind="presentation" modalPresentationStyle="fullScreen" id="oru-Wa-vfp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勇者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-kk-exe">
+                                <rect key="frame" x="20" y="129" width="56" height="28"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv. 15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E02-xt-Vik">
+                                <rect key="frame" x="289" y="129" width="84" height="28"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lCe-kk-exe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="49I-BX-T5i"/>
+                            <constraint firstAttribute="bottom" secondItem="ehp-av-8Jo" secondAttribute="bottom" id="6hk-Z7-D9K"/>
+                            <constraint firstItem="W1K-aN-MRX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="B7F-s4-bJU"/>
+                            <constraint firstItem="fxa-Al-SHp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ExB-e1-rh9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ehp-av-8Jo" secondAttribute="trailing" id="F0E-MC-BK6"/>
+                            <constraint firstItem="fxa-Al-SHp" firstAttribute="top" secondItem="HVj-QJ-tUJ" secondAttribute="bottom" constant="100" id="F15-3D-EnS"/>
+                            <constraint firstItem="W1K-aN-MRX" firstAttribute="top" secondItem="HVj-QJ-tUJ" secondAttribute="top" constant="50" id="Tga-21-2um"/>
+                            <constraint firstItem="lCe-kk-exe" firstAttribute="top" secondItem="HVj-QJ-tUJ" secondAttribute="top" constant="20" id="Ws6-8Q-HKu"/>
+                            <constraint firstItem="ehp-av-8Jo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZYb-0a-R30"/>
+                            <constraint firstItem="HVj-QJ-tUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="eMZ-UY-qLG"/>
+                            <constraint firstItem="E02-xt-Vik" firstAttribute="top" secondItem="HVj-QJ-tUJ" secondAttribute="top" constant="20" id="iYH-7g-RPo"/>
+                            <constraint firstItem="ehp-av-8Jo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ioD-Cg-1Sa"/>
+                            <constraint firstItem="HVj-QJ-tUJ" firstAttribute="bottom" secondItem="W1K-aN-MRX" secondAttribute="bottom" constant="50" id="j4r-Wa-5ug"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E02-xt-Vik" secondAttribute="trailing" constant="20" id="jXF-vW-bcI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HVj-QJ-tUJ" secondAttribute="trailing" id="n5T-4V-5d7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W1K-aN-MRX" secondAttribute="trailing" constant="50" id="pJV-05-wzU"/>
+                            <constraint firstItem="HVj-QJ-tUJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tWi-PZ-J1d"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+        </scene>
+        <!--Battle View Controller-->
+        <scene sceneID="yfm-03-iRc">
+            <objects>
+                <viewController id="scP-1v-bau" customClass="BattleViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RGJ-Gh-l19">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="77R-4I-nBQ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battlebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mf8-SR-WIb">
+                                <rect key="frame" x="0.0" y="50" width="393" height="602"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster.png" translatesAutoresizingMaskIntoConstraints="NO" id="scm-Y9-4nw">
+                                <rect key="frame" x="0.0" y="70" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PWx-Dt-qIC"/>
+                                    <constraint firstAttribute="width" constant="200" id="iEF-C8-rat"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yusya.png" translatesAutoresizingMaskIntoConstraints="NO" id="45h-Hz-GZx">
+                                <rect key="frame" x="193" y="432" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="WJN-tK-flV"/>
+                                    <constraint firstAttribute="height" constant="200" id="iCh-fe-ryB"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTm-6O-BCf">
+                                <rect key="frame" x="200" y="70" width="173" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドラゴン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iv9-F8-FwS">
+                                        <rect key="frame" x="20" y="20" width="88" height="22"/>
+                                        <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz8-4i-hOg">
+                                        <rect key="frame" x="20" y="62" width="22" height="22"/>
+                                        <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-Vs-IdM">
+                                        <rect key="frame" x="47" y="71" width="116" height="4"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstItem="Iv9-F8-FwS" firstAttribute="leading" secondItem="BTm-6O-BCf" secondAttribute="leading" constant="20" id="4c3-xu-bMu"/>
+                                    <constraint firstItem="DIO-Vs-IdM" firstAttribute="centerY" secondItem="kz8-4i-hOg" secondAttribute="centerY" id="9be-3p-y4V"/>
+                                    <constraint firstAttribute="height" constant="100" id="9s9-An-2Od"/>
+                                    <constraint firstItem="DIO-Vs-IdM" firstAttribute="leading" secondItem="kz8-4i-hOg" secondAttribute="trailing" constant="5" id="ArQ-yh-48W"/>
+                                    <constraint firstItem="Iv9-F8-FwS" firstAttribute="top" secondItem="BTm-6O-BCf" secondAttribute="top" constant="20" id="MuK-j1-0CW"/>
+                                    <constraint firstItem="kz8-4i-hOg" firstAttribute="leading" secondItem="BTm-6O-BCf" secondAttribute="leading" constant="20" id="T42-nR-MyW"/>
+                                    <constraint firstItem="kz8-4i-hOg" firstAttribute="top" secondItem="Iv9-F8-FwS" secondAttribute="bottom" constant="20" id="nY0-Xy-DTX"/>
+                                    <constraint firstAttribute="trailing" secondItem="DIO-Vs-IdM" secondAttribute="trailing" constant="10" id="pXK-Fn-ZSB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKF-k7-hpJ">
+                                <rect key="frame" x="20" y="482" width="173" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勇者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yQ-a8-o08">
+                                        <rect key="frame" x="20" y="20" width="44" height="22"/>
+                                        <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fa-pu-ZSG">
+                                        <rect key="frame" x="20" y="62" width="22" height="22"/>
+                                        <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yj1-eB-Ryy">
+                                        <rect key="frame" x="20" y="104" width="22" height="22"/>
+                                        <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wDt-cW-Uma">
+                                        <rect key="frame" x="47" y="71" width="116" height="4"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxe-Lp-eyG">
+                                        <rect key="frame" x="76" y="104" width="77" height="22"/>
+                                        <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wDt-cW-Uma" secondAttribute="trailing" constant="10" id="4qX-ay-9GF"/>
+                                    <constraint firstAttribute="height" constant="150" id="66u-Mh-Nsn"/>
+                                    <constraint firstItem="3yQ-a8-o08" firstAttribute="leading" secondItem="WKF-k7-hpJ" secondAttribute="leading" constant="20" id="7fl-rw-Ucv"/>
+                                    <constraint firstItem="wDt-cW-Uma" firstAttribute="leading" secondItem="4Fa-pu-ZSG" secondAttribute="trailing" constant="5" id="8Jd-SV-2le"/>
+                                    <constraint firstItem="3yQ-a8-o08" firstAttribute="top" secondItem="WKF-k7-hpJ" secondAttribute="top" constant="20" id="L7W-aJ-7KJ"/>
+                                    <constraint firstItem="yj1-eB-Ryy" firstAttribute="leading" secondItem="WKF-k7-hpJ" secondAttribute="leading" constant="20" id="OpJ-Cm-vWQ"/>
+                                    <constraint firstItem="wDt-cW-Uma" firstAttribute="centerY" secondItem="4Fa-pu-ZSG" secondAttribute="centerY" id="c1v-n3-KRu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gxe-Lp-eyG" secondAttribute="trailing" constant="20" id="cDY-Le-Ff8"/>
+                                    <constraint firstItem="Gxe-Lp-eyG" firstAttribute="centerY" secondItem="yj1-eB-Ryy" secondAttribute="centerY" id="iH1-KK-1BX"/>
+                                    <constraint firstItem="yj1-eB-Ryy" firstAttribute="top" secondItem="4Fa-pu-ZSG" secondAttribute="bottom" constant="20" id="jR5-tI-vhv"/>
+                                    <constraint firstItem="4Fa-pu-ZSG" firstAttribute="leading" secondItem="WKF-k7-hpJ" secondAttribute="leading" constant="20" id="swB-ah-b53"/>
+                                    <constraint firstItem="4Fa-pu-ZSG" firstAttribute="top" secondItem="3yQ-a8-o08" secondAttribute="bottom" constant="20" id="y6V-fo-5vc"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VXT-jq-Zbo">
+                                <rect key="frame" x="6.6666666666666572" y="702" width="380" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l29-ro-NsD">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="xpJ-IV-A3S"/>
+                                            <constraint firstAttribute="height" constant="100" id="zFe-0h-wNp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="こうげき">
+                                            <backgroundConfiguration key="background" image="gold_button.png"/>
+                                            <fontDescription key="titleFontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="playerAction" destination="scP-1v-bau" eventType="touchUpInside" id="uOh-2K-2oj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ws-f3-ETM">
+                                        <rect key="frame" x="130" y="0.0" width="120" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="KT8-zR-ch3"/>
+                                            <constraint firstAttribute="height" constant="100" id="op6-xQ-yDN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="ファイア">
+                                            <backgroundConfiguration key="background" image="gold_button.png"/>
+                                            <fontDescription key="titleFontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="fireAction" destination="scP-1v-bau" eventType="touchUpInside" id="lG9-Xg-4fF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-Jw-lEK">
+                                        <rect key="frame" x="260" y="0.0" width="120" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="2c1-Yy-ty4"/>
+                                            <constraint firstAttribute="height" constant="100" id="xlj-P6-EdO"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="ためる">
+                                            <backgroundConfiguration key="background" image="gold_button.png"/>
+                                            <fontDescription key="titleFontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="chargeAction" destination="scP-1v-bau" eventType="touchUpInside" id="bfM-O3-QcS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wqd-Sb-is0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VXT-jq-Zbo" firstAttribute="centerX" secondItem="RGJ-Gh-l19" secondAttribute="centerX" id="13h-xz-l5j"/>
+                            <constraint firstItem="77R-4I-nBQ" firstAttribute="leading" secondItem="wqd-Sb-is0" secondAttribute="leading" id="2hj-f8-3qY"/>
+                            <constraint firstItem="BTm-6O-BCf" firstAttribute="leading" secondItem="scm-Y9-4nw" secondAttribute="trailing" id="4tc-Wr-E9W"/>
+                            <constraint firstItem="77R-4I-nBQ" firstAttribute="top" secondItem="RGJ-Gh-l19" secondAttribute="top" id="6WJ-uD-Esq"/>
+                            <constraint firstItem="wqd-Sb-is0" firstAttribute="trailing" secondItem="Mf8-SR-WIb" secondAttribute="trailing" id="9UT-vV-vvT"/>
+                            <constraint firstItem="wqd-Sb-is0" firstAttribute="bottom" secondItem="Mf8-SR-WIb" secondAttribute="bottom" constant="200" id="Dp1-ce-N3f"/>
+                            <constraint firstItem="Mf8-SR-WIb" firstAttribute="top" secondItem="wqd-Sb-is0" secondAttribute="top" constant="50" id="EU7-9b-bd2"/>
+                            <constraint firstItem="45h-Hz-GZx" firstAttribute="leading" secondItem="WKF-k7-hpJ" secondAttribute="trailing" id="Hsj-Yc-XG2"/>
+                            <constraint firstItem="scm-Y9-4nw" firstAttribute="leading" secondItem="wqd-Sb-is0" secondAttribute="leading" id="QAa-6v-ZtM"/>
+                            <constraint firstItem="scm-Y9-4nw" firstAttribute="top" secondItem="Mf8-SR-WIb" secondAttribute="top" constant="20" id="Y6f-KC-cF4"/>
+                            <constraint firstItem="WKF-k7-hpJ" firstAttribute="leading" secondItem="wqd-Sb-is0" secondAttribute="leading" constant="20" id="ZAg-Bo-k9u"/>
+                            <constraint firstItem="Mf8-SR-WIb" firstAttribute="bottom" secondItem="45h-Hz-GZx" secondAttribute="bottom" constant="20" id="bWL-6w-f8O"/>
+                            <constraint firstItem="BTm-6O-BCf" firstAttribute="top" secondItem="Mf8-SR-WIb" secondAttribute="top" constant="20" id="c4P-jO-z6y"/>
+                            <constraint firstAttribute="bottom" secondItem="77R-4I-nBQ" secondAttribute="bottom" id="dDN-rE-53R"/>
+                            <constraint firstItem="Mf8-SR-WIb" firstAttribute="bottom" secondItem="WKF-k7-hpJ" secondAttribute="bottom" constant="20" id="gUV-Aj-O1L"/>
+                            <constraint firstItem="VXT-jq-Zbo" firstAttribute="top" secondItem="Mf8-SR-WIb" secondAttribute="bottom" constant="50" id="ioZ-VI-qLG"/>
+                            <constraint firstItem="wqd-Sb-is0" firstAttribute="trailing" secondItem="77R-4I-nBQ" secondAttribute="trailing" id="kee-HL-IOg"/>
+                            <constraint firstItem="wqd-Sb-is0" firstAttribute="trailing" secondItem="BTm-6O-BCf" secondAttribute="trailing" constant="20" id="lMC-pa-8gQ"/>
+                            <constraint firstItem="Mf8-SR-WIb" firstAttribute="leading" secondItem="wqd-Sb-is0" secondAttribute="leading" id="nNt-Wj-dQU"/>
+                            <constraint firstItem="wqd-Sb-is0" firstAttribute="trailing" secondItem="45h-Hz-GZx" secondAttribute="trailing" id="tfl-Vl-zft"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enemyHPBar" destination="DIO-Vs-IdM" id="oUU-4h-hq2"/>
+                        <outlet property="enemyImageView" destination="scm-Y9-4nw" id="5cf-cf-hvb"/>
+                        <outlet property="enemyNameLabel" destination="Iv9-F8-FwS" id="5bb-k1-I8T"/>
+                        <outlet property="playerHPBar" destination="wDt-cW-Uma" id="AnE-8n-OZd"/>
+                        <outlet property="playerImageView" destination="45h-Hz-GZx" id="aFZ-ET-y55"/>
+                        <outlet property="playerNameLabel" destination="3yQ-a8-o08" id="1jU-Ra-tjF"/>
+                        <outlet property="playerTPLabel" destination="Gxe-Lp-eyG" id="e4o-rf-mCr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3I-jA-aiR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.39694656488541" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="battlebg.png" width="320" height="160"/>
+        <image name="bgimage.jpg" width="1280" height="960"/>
+        <image name="gold_button.png" width="800" height="245"/>
+        <image name="lobby.png" width="500" height="400"/>
+        <image name="monster.png" width="88" height="120"/>
+        <image name="yusya.png" width="56" height="56"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
